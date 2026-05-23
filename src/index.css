@@ -99,3 +99,50 @@ body::before {
     0 0 32px color-mix(in srgb, var(--glass-accent, var(--accent-1)) 35%, transparent);
   transform: translateY(-2px);
 }
+
+@keyframes gradient-mesh-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.08);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.hero-gradient-mesh {
+  background:
+    radial-gradient(circle at 22% 28%, color-mix(in srgb, var(--accent-1) 56%, transparent) 0%, transparent 45%),
+    radial-gradient(circle at 76% 24%, color-mix(in srgb, var(--accent-2) 52%, transparent) 0%, transparent 40%),
+    radial-gradient(circle at 56% 76%, color-mix(in srgb, var(--accent-3) 50%, transparent) 0%, transparent 42%),
+    linear-gradient(135deg, #050508 0%, #080914 100%);
+  filter: blur(8px) saturate(120%);
+  animation: gradient-mesh-spin 20s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float-card {
+  animation: float-card 3s ease-in-out infinite;
+}
+
+.animate-float-card-delayed {
+  animation: float-card 3.2s ease-in-out infinite;
+  animation-delay: 0.45s;
+}
+
+.animate-float-card-slow {
+  animation: float-card 3.4s ease-in-out infinite;
+  animation-delay: 0.85s;
+}
